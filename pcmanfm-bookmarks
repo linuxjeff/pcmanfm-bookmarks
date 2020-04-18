@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+#!/usr/bin/env bash
+#
+# arch-update: Atualiza o Arch Linux
+#
+# Site:       N/A
+# Autor:      Jefferson Santana
+# Manutenção: Jefferson Santana
+#
+# ---------------------------------------------------------------------------------- #
+#  Este programa cria um arquivo
+#  .gtk-bookmarks no home do 
+#  usuário.
+#
+#  Exemplos:
+#      $ pcmanfm-bookmarks
+#      Neste exemplo o programa cria o arquivo de Bookmarks
+# ---------------------------------------------------------------------------------- #
+# Histórico:
+#
+#   v0.0.0 17/04/2020, Jefferson:
+#       - Início do programa
+
+if [ -e ~/.gtk-bookmarks ]
+       then
+         exit 0
+       else
+         echo "file:///$HOME/Documentos Documentos" >> ~/.gtk-bookmarks
+         echo "file://$HOME/Imagens Imagens"        >> ~/.gtk-bookmarks
+         echo "file://$HOME/M%C3%BAsica Música"     >> ~/.gtk-bookmarks
+         echo "file://$HOME/V%C3%ADdeos Vídeos"     >> ~/.gtk-bookmarks
+         echo "file://$HOME/Downloads Downloads"    >> ~/.gtk-bookmarks
+fi
