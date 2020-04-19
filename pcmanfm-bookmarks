@@ -20,7 +20,45 @@
 #
 #   v0.0.0 17/04/2020, Jefferson:
 #       - Início do programa
+#   v0.0.1 19/04/2020, Jefferson:
+#       - Implementando as opções
+#         do programa.
 
+# ------------------------------- VARIÁVEIS ----------------------------------------- #
+
+PEGAR_VERSAO=`egrep "^#   v" $0 | tail -n1 | cut -d " " -f 4`
+
+VERSAO="$(basename "$0") $PEGAR_VERSAO"
+
+MENSAGEM_AJUDA="Uso: $(basename "$0") [OPÇÕES]
+-h --help       Mostra a ajuda
+-V --version    Mostra a versão
+"
+
+# While das opções de linha de comando.
+while test -n "$1"
+        do
+# Case das opçãoes.
+case "$1" in
+   -h | --help )
+              echo "$MENSAGEM_AJUDA"
+  	          exit 0
+   	          ;;
+
+    -V | --version )
+  	          echo "$VERSAO"
+  	          exit 0
+  	          ;;
+
+                 * )
+              echo Opção inválida: $1
+  		        exit 1
+  	          ;;
+          esac
+     shift
+done
+
+# Criando o arquivo gtk-bookmarks
 if [ -e ~/.gtk-bookmarks ]
        then
          exit 0
