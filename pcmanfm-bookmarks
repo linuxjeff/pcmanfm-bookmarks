@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-#!/usr/bin/env bash
 #
-# arch-update: Atualiza o Arch Linux
+# pcmanfm-bookmarks: Cria o gtk-bookmarks
 #
 # Site:       N/A
 # Autor:      Jefferson Santana
@@ -23,8 +22,15 @@
 #   v0.0.1 19/04/2020, Jefferson:
 #       - Implementando as opções
 #         do programa.
+#
+# ---------------------------------------------------------------------------------- #
+# ---------------------------------------------------------------------------------- #
+# Testado em:
+#   bash     v5.0.16
+# ---------------------------------------------------------------------------------- #
 
-# ------------------------------- VARIÁVEIS ----------------------------------------- #
+
+# ------------------------------- VARIÁVEIS ---------------------------------------- #
 
 PEGAR_VERSAO=`egrep "^#   v" $0 | tail -n1 | cut -d " " -f 4`
 
@@ -34,6 +40,7 @@ MENSAGEM_AJUDA="Uso: $(basename "$0") [OPÇÕES]
 -h --help       Mostra a ajuda
 -V --version    Mostra a versão
 "
+# ---------------------------------------------------------------------------------- #
 
 # While das opções de linha de comando.
 while test -n "$1"
